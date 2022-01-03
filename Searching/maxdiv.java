@@ -44,7 +44,7 @@ public class Main {
             for (int i = 0; i < arr.length; ++i)
             {
                 if(arr[i]<=high&&arr[i]>=low)
-                    maxCo=Math.max(maxCo,arr[i]);
+                    maxCo=Math.max(maxCo,arr    [i]);
             }
             System.out.println(maxCo);
         }
