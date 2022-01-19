@@ -1,8 +1,6 @@
-// Question Link: https://www.prepbytes.com/panel/mycourses/program-one/dsalgo/week/12/graphs/codingAssignment/CONCOM
+// Question Link: https://www.prepbytes.com/panel/mycourses/program-one/dsalgo/week/12/graphs/codingAssignment/BUYRES
 
-// Given an undirected graph, count the number of connected components.
-
-//Count using DFS appraoch
+// In a City, a Businessman has P Number of Paths. Each Path Connects two Restaurants X and Y. The Businessman plans to buy all the possible Restaurants that has paths between them. Such that he can buy Restaurant X and Restaurant Y, if there is a path between X and Y. Now, You need to tell how many Restaurants did the Businessman buy.
 
 import java.util.*;
   import java.io.*;
@@ -93,22 +91,29 @@ import java.util.*;
       return count;
     }
   }
-  public class CONCOM {
+  public class BUYRES {
     
     public static void main(String args[]) throws IOException {
       
       Scanner sc = new Scanner(System.in);
       int t = sc.nextInt();
       while(t--!=0){
-        int v = sc.nextInt();
+        // int v = sc.nextInt();
         int e = sc.nextInt();
-        Graph g = new Graph(v);
-        for(int i=0;i<v;i++)
-          g.addNode(i);
-        for(int i=0;i<e;i++){
-          g.addEdge(sc.nextInt(),sc.nextInt());
+        // Graph g = new Graph(v);
+        // for(int i=0;i<v;i++)
+        //   g.addNode(i);
+        List<Integer> al = new ArrayList<>();
+        int count = 0;
+        for(int i=0;i<2*e;i++){
+          // g.addEdge(sc.nextInt(),sc.nextInt());
+          int x = sc.nextInt();
+          if(!al.contains(x)){
+            al.add(x);
+            count++;
+          }
         }
-        System.out.println(g.dft());
+        System.out.println(count);
         
       }
       
