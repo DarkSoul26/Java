@@ -1,4 +1,4 @@
-Question link: https://www.prepbytes.com/panel/mycourses/program-one/dsalgo/week/13/divide-and-conquer/codingAssignment/EQSTRS
+// Question link: https://www.prepbytes.com/panel/mycourses/program-one/dsalgo/week/13/divide-and-conquer/codingAssignment/EQSTRS
 
 import java.util.*;
   import java.io.*;
@@ -32,5 +32,6 @@ import java.util.*;
         System.out.println("YES");
       else
         System.out.println("NO");
+      sc.close();
     }
   }

@@ -36,5 +36,6 @@ import java.util.*;
         }
       }
       System.out.println(count);
+      sc.close();
     }
   }

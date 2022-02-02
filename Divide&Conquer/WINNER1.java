@@ -39,6 +39,6 @@ import java.util.*;
         else
         System.out.println(i-1);
       }
-      
+      sc.close();
     }
 }
