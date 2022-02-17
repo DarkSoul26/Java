@@ -51,6 +51,8 @@ public class KruskalsAlgo {
 
         List<Edge> res = new ArrayList<>();
         int c = 0, i = 0;
+
+        //Union find Algorithm
         while(c<n-1){
             Edge e = graph.get(i);
             int u1 = find(vert, e.u);
@@ -66,6 +68,7 @@ public class KruskalsAlgo {
         return res;
     }
 
+    //Find the parent of the node
     private static int find(int[] vert, int u) {
         if(u == vert[u])
             return u;
