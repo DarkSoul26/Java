@@ -2,7 +2,6 @@ import java.util.*;
   import java.io.*;
   
   public class ENCRYPT {
-    // public static boolean flag = false;
     public static void findAllPossible(int n, int j, int []a, int i, boolean flag){
       if(j==n){
         
