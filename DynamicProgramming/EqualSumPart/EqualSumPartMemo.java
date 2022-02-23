@@ -1,0 +1,62 @@
+package DynamicProgramming.EqualSumPart;
+import java.util.*;
+
+// Test case:
+// 5 
+// 4
+// 2 6 14 6
+// 4
+// 2 6 12 6
+// 3
+// 1 2 3
+// 5 6 9 1 3 5
+// 5 
+// 1 1 1 1 1
+
+// o/p:
+// true
+// false
+// true
+// true
+// false
+
+public class EqualSumPartMemo {
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        int t = sc.nextInt();
+        while(t--!=0){
+            int n = sc.nextInt();
+            int a[] = new int[n];
+            int sum = 0;
+            
+            for(int i = 0;i<n;i++){
+                a[i] = sc.nextInt();
+                sum+=a[i];
+            }
+            if(sum%2==0){
+                boolean dp[][] = new boolean[n+1][sum/2+1];
+                System.out.println(equalSumPart(a, n, sum/2, dp));
+            }
+            else
+                System.out.println("false");
+        }
+        sc.close();
+    }
+
+    private static boolean equalSumPart(int[] a, int n, int sum, boolean dp[][]) {
+        if(sum == 0)
+            return true;
+        if(n == 0)
+            return false;
+        if(dp[n][sum]){
+            return true;
+        }
+        if(a[n-1] > sum){
+            dp[n][sum] =  equalSumPart(a, n-1, sum, dp);
+        }
+        else{
+            dp[n][sum] = equalSumPart(a, n-1, sum-a[n-1], dp) || equalSumPart(a,n-1,sum, dp);
+        }
+        return dp[n][sum];
+    }
+}
